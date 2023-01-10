@@ -18,3 +18,12 @@ element = driver.find_element(By.ID, 'query')
 element.send_keys("변군이글루")
 element.send_keys(Keys.ENTER)
 time.sleep(7)
+
+# element1 = driver.find_element(By.XPATH, '//*[@id="web_1"]/div[1]/div[2]/div[2]/a')
+element1 = driver.find_element(By.XPATH, '//*[@id="web_1"]/div[1]/div[2]/div[2]/a')
+element1.send_keys(Keys.RETURN)
+time.sleep(10)
+
+element2 = driver.find_element(By.XPATH, '/html/body/div[2]/section/article/div[2]/div[1]/a')
+element2.send_keys(Keys.RETURN)
+time.sleep(10)
