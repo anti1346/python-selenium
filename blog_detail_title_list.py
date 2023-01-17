@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 
 res = requests.get('https://sangchul.kr')
-
 soup = BeautifulSoup(res.text, "lxml")
 
 print("=" * 60)
