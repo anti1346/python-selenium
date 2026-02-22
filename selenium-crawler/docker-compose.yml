@@ -1,0 +1,21 @@
+services:
+
+  selenium:
+    image: selenium/standalone-firefox
+    container_name: selenium-firefox
+    ports:
+      - "4444:4444"
+    shm_size: "2gb"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4444"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  crawler:
+    build: .
+    container_name: selenium-crawler
+    depends_on:
+      selenium:
+        condition: service_healthy
+
